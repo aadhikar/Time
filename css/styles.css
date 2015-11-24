@@ -1,0 +1,25 @@
+body{
+    background-color: #080808;
+}
+div.time, div.alarm{
+    margin: 10px;
+    font-family: 'Droid Serif', serif;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 68px;
+    color: #0CD655;
+}
+.classMusic{
+    display: none;
+}
+h2{
+    height: 50px;
+    background-color: #3d25ff;
+    margin: 10px;
+    text-align: center;
+}
+ul li, ul li{
+    background-color: #080808;
+  }
+
+
