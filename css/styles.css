@@ -1,13 +1,13 @@
 body{
     background-color: #080808;
 }
-div.time, div.alarm{
+.time, .alarm, .countdownOutput, .stopwatch{
     margin: 10px;
     font-family: 'Droid Serif', serif;
     text-align: center;
     font-weight: bolder;
-    font-size: 68px;
-    color: #0CD655;
+    font-size: 65px;
+    color: lime;
 }
 .classMusic{
     display: none;
@@ -18,7 +18,7 @@ h2{
     margin: 10px;
     text-align: center;
 }
-ul li, ul li{
+ul li{
     background-color: #080808;
   }
 
