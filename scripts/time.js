@@ -5,7 +5,7 @@
 "use strict";
 
 
-(function () {
+(function (document) {
 
     //Clock variable initialisation
     var am_pm = "";
@@ -28,6 +28,7 @@
     var alarmDate = "";
     var alarmHour = "";
     var alarmMinutes = "";
+    var isAlarmStop = false;
 
 
 
@@ -82,7 +83,7 @@
         }
 
         //Display Time with Day MMM DD YYYY format
-        document.getElementById("#myClock").innerHTML = (currentHour ? (currentHour >= 9 ? currentHour : "0" + currentHour) : "00") + ":" + (currentMinutes ? (currentMinutes > 9 ? currentMinutes : "0" + currentMinutes) : "00") + ":" + (currentSeconds > 9 ? currentSeconds : "0"+ currentSeconds) + " " + am_pm;
+        document.getElementById("#myClock").innerHTML = (currentHour ? (currentHour >= 9 ? currentHour : "0" + currentHour) : "00") + ":" + (currentMinutes ? (currentMinutes > 9 ? currentMinutes : "0" + currentMinutes) : "00") + ":" + (currentSeconds > 9 ? currentSeconds : "0" + currentSeconds) + " " + am_pm;
         document.getElementById("#myYear").innerHTML = currentDay + " " + currentMonth + " " + currentDate + " " + currentYear;
     }
 
@@ -91,7 +92,7 @@
 
 
     /*Display Alarm*/
-    document.getElementById("#alarm").innerHTML = "YYYY" + " " + "MMM" + " " + "DD" + ", " + "HH" + ":" + "MM" +" "+ "AM/PM";
+    document.getElementById("#alarm").innerHTML = "YYYY" + " " + "MMM" + " " + "DD" + ", " + "HH" + ":" + "MM" + " " + "AM/PM";
     function startAlarm(event) {
 
         //Get user values for alarm
@@ -136,9 +137,15 @@
         if (alarmInput === "") {
             alert("Did you set proper ALARM?!!");
         } else {
-            document.getElementById("#alarm").innerHTML = alarmYear + " " + alarmMonth + " " + alarmDate + ", " + alarmHour + ":" + alarmMinutes +" "+ am_pm;
+            document.getElementById("#alarm").innerHTML = alarmYear + " " + alarmMonth + " " + alarmDate + ", " + alarmHour + ":" + alarmMinutes + " " + am_pm;
         }
         event.preventDefault();
+        event.stopPropagation();
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
     }
 
 
@@ -148,7 +155,7 @@
 
     //Triggers alarm music(preloaded) when alarm time occurs
     function triggerAlarm() {
-        if (currentYear === alarmYear && currentMonth === alarmMonth && currentDate === alarmDate && currentHour === alarmHour && currentMinutes === alarmMinutes && true) {
+        if (currentYear == alarmYear && currentMonth == alarmMonth && currentDate == alarmDate && currentHour == alarmHour && currentMinutes == alarmMinutes && isAlarmStop == false) {
             document.getElementById("#alarmMusic").play();
             setInterval(function () {
                 document.getElementById("#alarm").style.color = "red";
@@ -161,6 +168,13 @@
 
     document.getElementById("#alarmStart").addEventListener("click", startAlarm, false);
 
+    document.getElementById("#alarmStop").addEventListener("click", stopAlarm, false);
+
+    function stopAlarm (){
+        document.getElementById("#alarmMusic").pause();
+        isAlarmStop = true;
+    }
+
     /* Display countdown*/
     document.getElementById("#countdownOutput").innerHTML = "00 Days, 00 Hours, 00 Mins, 00 Secs";
     function countdownStart(event) {
@@ -171,7 +185,7 @@
             countdownMins = Math.floor((countdownRemainingTime / 1000 / 60) % 60);
             countdownHours = Math.floor((countdownRemainingTime / (1000 * 60 * 60)) % 24);
             days = Math.floor(countdownRemainingTime / (1000 * 60 * 60 * 24));
-            document.getElementById("#countdownOutput").innerHTML = (days ? (days < 10 ? "0"+days : days): "00") + " Days, " + (countdownHours ? (countdownHours < 10 ? "0"+countdownHours : countdownHours) : "00") + " Hours, " + (countdownMins ? (countdownMins < 10 ? "0"+countdownMins : countdownMins) : "00") + " Mins, " + (countdownSecs ? (countdownSecs < 10 ? "0"+countdownSecs : countdownSecs) : "00") + " Secs";
+            document.getElementById("#countdownOutput").innerHTML = (days ? (days < 10 ? "0" +days : days): "00") + " Days, " + (countdownHours ? (countdownHours < 10 ? "0" +countdownHours : countdownHours) : "00") + " Hours, " + (countdownMins ? (countdownMins < 10 ? "0" +countdownMins : countdownMins) : "00") + " Mins, " + (countdownSecs ? (countdownSecs < 10 ? "0" +countdownSecs : countdownSecs) : "00") + " Secs";
         }
 
         //Get user values for alarm
@@ -218,6 +232,12 @@
             setInterval(updateCountdown, 1000);
         }
         event.preventDefault();
+        event.stopPropagation();
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
     }
 
     document.getElementById("#countdownStart").addEventListener("click", countdownStart, false);
@@ -235,6 +255,12 @@
             document.getElementById("#stopwatchStart").innerHTML = "Resmume";
         }
         event.preventDefault();
+        event.stopPropagation();
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
     }
 
     function stopwatchIncrement() {
@@ -246,7 +272,7 @@
                 stopwatchSecs = Math.floor((stopwatchTime / 100) % 60);
                 stopwatchTenths = Math.floor(stopwatchTime % 100);
 
-                document.getElementById("#stopwatch").innerHTML = (stopwatchHours ? (stopwatchHours < 10 ? "0"+stopwatchHours : stopwatchHours) : "00") + ":" + (stopwatchMins ? (stopwatchMins < 10 ? "0"+stopwatchMins : stopwatchMins) : "00") + ":"+ (stopwatchSecs ? (stopwatchSecs < 10 ? "0" + stopwatchSecs : stopwatchSecs) : "00") + ":" + (stopwatchTenths ? ((stopwatchTenths < 10) ? "0"+stopwatchTenths : stopwatchTenths) : "00");
+                document.getElementById("#stopwatch").innerHTML = (stopwatchHours ? (stopwatchHours < 10 ? "0" + stopwatchHours : stopwatchHours) : "00") + ":" + (stopwatchMins ? (stopwatchMins < 10 ? "0" + stopwatchMins : stopwatchMins) : "00") + ":" + (stopwatchSecs ? (stopwatchSecs < 10 ? "0" + stopwatchSecs : stopwatchSecs) : "00") + ":" + (stopwatchTenths ? ((stopwatchTenths < 10) ? "0" + stopwatchTenths : stopwatchTenths) : "00");
             }
         }, 10);
     }
@@ -262,4 +288,4 @@
     document.getElementById("#stopwatchStop").addEventListener("click", stopwatchStop, false);
 
 
-})();
+})(document);
