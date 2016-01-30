@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
-    <meta charset="UTF-8">
-    <meta name="description" content="This is demo version of time related applications such as clock, alarm, countdown and stopwatch.">
-    <title>Times</title>
-    <!--[if lt IE 9]>
-    <script src="scripts/html5shiv.min.js"></script>
-    <![endif]-->
-    <link rel="icon" href="favicon/analogClockFavicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
+  <meta charset="UTF-8">
+  <meta name="description"
+        content="This is demo version of time related applications such as clock, alarm, countdown and stopwatch.">
+  <title>Times</title>
+  <!--[if lt IE 9]>
+  <script src="scripts/html5shiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" href="favicon/analogClockFavicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header>
@@ -19,82 +20,84 @@
 </header>
 
 <section>
-    <div class="container" id="home">
-        <ul class="nav nav-tabs nav-justified nav-inverse">
-            <li role="presentation" class="active"><a href="#clock" data-toggle="tab">Clock</a>
-            </li>
-            <li role="presentation"><a href="#alarm" data-toggle="tab">Alarm</a>
-            </li>
-            <li role="presentation"><a href="#countdown" data-toggle="tab">Countdown</a>
-            </li>
-            <li role="presentation"><a href="#stopwatch" data-toggle="tab">Stopwatch</a>
-            </li>
-        </ul>
-        <div id="content" class="tab-content">
-            <div class="tab-pane active" id="clock" aria-live="assertive" role="alert" aria-hidden="false">
-                <div class="time">
-                    <div class="myClock" id="#myClock"></div>
-                    <div id="#myYear"></div>
-                </div>
-            </div>
-            <div class="tab-pane" id="alarm" aria-live="assertive" role="alert" aria-hidden="false">
-                <div class="alarm" id="#alarm">
-
-                </div>
-                <form novalidate>
-                    <div class="form-group">
-                        <label for="#myAlarm">
-                            <input class="form-control" type="datetime-local" id="#myAlarm">
-                        </label>
-                    </div>
-                    <div class="form-group classMusic">
-                        <label for="#alarmMusic">
-                            <audio class="alarmMusic" id="#alarmMusic" src="music/Maid%20with%20the%20Flaxen%20Hair.mp3" preload="auto"></audio>
-                        </label>
-                    </div>
-                    <button type="submit" class="btn large-btn btn-primary" id="#alarmStart">Set Alarm</button>
-                    <button type="reset" class="btn large-btn btn-primary" id="#alarmStop">Stop Alarm</button>
-                </form>
-
-
-            </div>
-            <div class="tab-pane" id="countdown" aria-live="assertive" role="alert" aria-hidden="false">
-                <div class="countdownOutput" id="#countdownOutput">
-
-                </div>
-                <form novalidate>
-                    <div class="form-group">
-                        <label for="#myCountdown">
-                            <input class="form-control" type="datetime-local" id="#myCountdown">
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            <button type="submit" class="btn large-btn btn-primary" id="#countdownStart">Start</button>
-                            <!--<button type="reset" class="btn large-btn btn-primary" id="#countdownStop">Stop</button>-->
-                        </label>
-                    </div>
-                    <div class="form-group classMusic">
-                        <label for="#countdownMusic">
-                            <audio class="alarmMusic" id="#countdownMusic" src="music/Maid%20with%20the%20Flaxen%20Hair.mp3" preload="auto"></audio>
-                        </label>
-                    </div>
-                </form>
-            </div>
-            <div class="tab-pane" id="stopwatch" aria-live="assertive" role="alert" aria-hidden="false">
-                <div class="stopwatch" id="#stopwatch">
-
-                </div>
-                <form novalidate>
-                    <label>
-                        <button  type="submit" class="btn large-btn btn-primary" id="#stopwatchStart">Start</button>
-                        <button type="reset" class="btn large-btn btn-primary" id="#stopwatchStop">Stop</button>
-                    </label>
-                </form>
-
-            </div>
+  <div class="container" id="home">
+    <ul class="nav nav-tabs nav-justified nav-inverse">
+      <li role="presentation" class="active"><a href="#clock" data-toggle="tab">Clock</a>
+      </li>
+      <li role="presentation"><a href="#alarm" data-toggle="tab">Alarm</a>
+      </li>
+      <li role="presentation"><a href="#countdown" data-toggle="tab">Countdown</a>
+      </li>
+      <li role="presentation"><a href="#stopwatch" data-toggle="tab">Stopwatch</a>
+      </li>
+    </ul>
+    <div id="content" class="tab-content">
+      <div class="tab-pane active" id="clock" aria-live="assertive" role="alert" aria-hidden="false">
+        <div class="time">
+          <div class="myClock" id="#myClock"></div>
+          <div id="#myYear"></div>
         </div>
+      </div>
+      <div class="tab-pane" id="alarm" aria-live="assertive" role="alert" aria-hidden="false">
+        <div class="alarm" id="#alarm">
+
+        </div>
+        <form novalidate>
+          <div class="form-group">
+            <label for="#myAlarm">
+              <input class="form-control" type="datetime-local" id="#myAlarm">
+            </label>
+          </div>
+          <div class="form-group classMusic">
+            <label for="#alarmMusic">
+              <audio class="alarmMusic" id="#alarmMusic" src="music/Maid%20with%20the%20Flaxen%20Hair.mp3"
+                     preload="auto"></audio>
+            </label>
+          </div>
+          <button type="submit" class="btn large-btn btn-primary" id="#alarmStart">Set Alarm</button>
+          <button type="reset" class="btn large-btn btn-primary" id="#alarmStop">Stop Alarm</button>
+        </form>
+
+
+      </div>
+      <div class="tab-pane" id="countdown" aria-live="assertive" role="alert" aria-hidden="false">
+        <div class="countdownOutput" id="#countdownOutput">
+
+        </div>
+        <form novalidate>
+          <div class="form-group">
+            <label for="#myCountdown">
+              <input class="form-control" type="datetime-local" id="#myCountdown">
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <button type="submit" class="btn large-btn btn-primary" id="#countdownStart">Start</button>
+              <!--<button type="reset" class="btn large-btn btn-primary" id="#countdownStop">Stop</button>-->
+            </label>
+          </div>
+          <div class="form-group classMusic">
+            <label for="#countdownMusic">
+              <audio class="alarmMusic" id="#countdownMusic" src="music/Maid%20with%20the%20Flaxen%20Hair.mp3"
+                     preload="auto"></audio>
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="tab-pane" id="stopwatch" aria-live="assertive" role="alert" aria-hidden="false">
+        <div class="stopwatch" id="#stopwatch">
+
+        </div>
+        <form novalidate>
+          <label>
+            <button type="submit" class="btn large-btn btn-primary" id="#stopwatchStart">Start</button>
+            <button type="reset" class="btn large-btn btn-primary" id="#stopwatchStop">Stop</button>
+          </label>
+        </form>
+
+      </div>
     </div>
+  </div>
 </section>
 
 <!--<script type="text/javascript" src="scripts/copy.js"></script>-->

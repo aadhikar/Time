@@ -1,25 +1,29 @@
-body{
-    background-color: #080808;
+body {
+  background-color: #080808;
 }
-.time, .alarm, .countdownOutput, .stopwatch{
-    margin: 10px;
-    font-family: 'Droid Serif', serif;
-    text-align: center;
-    font-weight: bolder;
-    font-size: 65px;
-    color: lime;
+
+.time, .alarm, .countdownOutput, .stopwatch {
+  margin: 10px;
+  font-family: 'Droid Serif', serif;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 65px;
+  color: lime;
 }
-.classMusic{
-    display: none;
+
+.classMusic {
+  display: none;
 }
-h2{
-    height: 50px;
-    background-color: #3d25ff;
-    margin: 10px;
-    text-align: center;
+
+h2 {
+  height: 50px;
+  background-color: #3d25ff;
+  margin: 10px;
+  text-align: center;
 }
-ul li{
-    background-color: #080808;
-  }
+
+ul li {
+  background-color: #080808;
+}
 
 
